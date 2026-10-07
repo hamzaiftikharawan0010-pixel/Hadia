@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Hadia Iftikhar & Ali Rehan — Wedding Invitation | Mehndi & Baraat</title>
+  <meta name="description"
+    content="You are cordially invited to celebrate the wedding of Hadia Iftikhar & Ali Rehan. Join us for an unforgettable celebration of love, family, and tradition." />
+  <meta name="theme-color" content="#0a0e27" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       FAIRY LIGHTS — Full-screen Canvas (Parallax)
+       ============================================================ -->
+  <canvas id="fairy-lights-canvas" aria-hidden="true"></canvas>
+
+  <!-- ============================================================
+       WELCOME / ROYAL ENTRANCE DOORS OVERLAY
+       ============================================================ -->
+  <div id="music-overlay" class="royal-doors-overlay">
+    <!-- Left Palace Door Panel -->
+    <div class="door-panel door-left" aria-hidden="true">
+      <div class="door-frame">
+        <div class="door-arch"></div>
+        <div class="door-panels-grid">
+          <div class="door-inner-panel"></div>
+          <div class="door-inner-panel"></div>
+        </div>
+      </div>
+      <div class="door-handle door-handle-left">
+        <div class="handle-plate"></div>
+        <div class="handle-ring"></div>
+      </div>
+    </div>
+
+    <!-- Right Palace Door Panel -->
+    <div class="door-panel door-right" aria-hidden="true">
+      <div class="door-frame">
+        <div class="door-arch"></div>
+        <div class="door-panels-grid">
+          <div class="door-inner-panel"></div>
+          <div class="door-inner-panel"></div>
+        </div>
+      </div>
+      <div class="door-handle door-handle-right">
+        <div class="handle-plate"></div>
+        <div class="handle-ring"></div>
+      </div>
+    </div>
+
+    <!-- Central Royal Wedding Envelope -->
+    <div class="overlay-content royal-envelope">
+      <!-- Decorative Envelope Top Flap -->
+      <div class="envelope-top-flap">
+        <svg class="envelope-flap-svg" viewBox="0 0 500 80" preserveAspectRatio="none">
+          <path d="M0,0 L250,75 L500,0 Z" class="envelope-flap-fill" />
+          <path d="M0,0 L250,75 L500,0" class="envelope-flap-border" />
+        </svg>
+      </div>
+
+      <!-- Luxury Corner Filigree Accents -->
+      <div class="envelope-corner corner-tl"></div>
+      <div class="envelope-corner corner-tr"></div>
+      <div class="envelope-corner corner-bl"></div>
+      <div class="envelope-corner corner-br"></div>
+
+      <!-- Envelope Content / Card Face -->
+      <div class="envelope-body">
+        <div class="overlay-quran-verse">
+          <p class="overlay-quran-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+          <p class="overlay-quran-english">IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL</p>
+        </div>
+
+        <p class="envelope-invitation-tag">Wedding Invitation</p>
+        <h2 class="overlay-names shimmer-text">Hadia &amp; Ali</h2>
+
+        <!-- Wax Seal Stamp Button (Opening Trigger) -->
+        <div class="wax-stamp-container">
+          <button id="btn-play-overlay" class="royal-wax-stamp" aria-label="Break royal seal and open invitation">
+            <span class="stamp-outer-glow"></span>
+            <span class="stamp-wax-base">
+              <span class="stamp-inner-border"></span>
+              <span class="stamp-seal-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+              </span>
+              <span class="stamp-unseal-text">OPEN</span>
+            </span>
+          </button>
+          <p class="stamp-instruction">✦ Tap the seal to open ✦</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FLOATING MUSIC FAB
+       ============================================================ -->
+  <button id="music-player-fab" aria-label="Toggle music">
+    <svg viewBox="0 0 24 24">
+      <polygon points="5,3 19,12 5,21" />
+    </svg>
+  </button>
+
+  <!-- Background Audio (hidden) -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="wedding_nasheed.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-link">Home</a>
+      <a href="#bismillah" class="nav-link">Welcome</a>
+      <a href="#events" class="nav-link">Events</a>
+      <a href="#rsvp" class="nav-link">RSVP</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section id="hero">
+    <!-- Background Image -->
+    <div class="hero-bg">
+      <img src="images/hero-bg.jpg" alt="Fairy lights background" />
+    </div>
+    <div class="hero-overlay"></div>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <div class="hero-quran-verse reveal">
+        <p class="hero-quran-arabic">وَخَلَقْنَاكُمْ أَزْوَاجًا</p>
+        <p class="hero-quran-english">AND WE CREATED YOU IN PAIRS</p>
+      </div>
+
+      <h1 class="hero-couple-names shimmer-text">
+        Hadia
+        <span class="ampersand">&amp;</span>
+        Ali Rehan
+      </h1>
+
+      <p class="hero-date">November 5–6, 2026 &nbsp;·&nbsp; Lahore, Pakistan</p>
+
+      <!-- Countdown -->
+      <div class="countdown">
+        <div class="countdown-item">
+          <span class="number" id="cd-days">--</span>
+          <span class="label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="number" id="cd-hours">--</span>
+          <span class="label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span class="number" id="cd-mins">--</span>
+          <span class="label">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span class="number" id="cd-secs">--</span>
+          <span class="label">Seconds</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Hint -->
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 16l-6-6h12z" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BISMILLAH / WELCOME & INVITATION
+       ============================================================ -->
+  <section id="bismillah">
+    <div class="container">
+      <!-- Enhanced Floral Bismillah Banner -->
+      <div class="reveal">
+        <div class="bismillah-wrapper">
+          <img src="images/bismillah.png" alt="Bismillah ir-Rahman ir-Rahim" class="bismillah-img" />
+        </div>
+      </div>
+      <div class="gold-divider reveal"></div>
+
+      <!-- Royal Couple Invitation Card -->
+      <div class="couple-invitation-card reveal">
+        <div class="couple-portrait-wrapper">
+          <div class="couple-portrait-arch">
+            <img src="images/couple-portrait.png" alt="Hadia &amp; Ali Rehan" class="couple-portrait-img" />
+            <div class="portrait-arch-border"></div>
+          </div>
+        </div>
+
+        <div class="invitation-text-wrapper">
+          <div class="invitation-badge">
+            <span>Wedding Invitation</span>
+          </div>
+          <h2 class="invitation-heading shimmer-text">Hadia &amp; Ali Rehan</h2>
+          <div class="invitation-gold-accent"></div>
+          <p class="welcome-narrative">
+            With the grace and blessings of the Almighty, <strong>Mr. &amp; Mrs. Iftikhar Ali Awan</strong>
+            cordially request the honour of your gracious presence to celebrate and bless the wedding ceremonies of
+            their beloved children,
+            <strong>Hadia Iftikhar</strong> and <strong>Ali Rehan</strong>.
+          </p>
+          <p class="welcome-narrative welcome-subtext">
+            Your love, prayers, and warm presence on this joyous occasion will be a cherished blessing as they embark on
+            this beautiful new journey together.
+          </p>
+          <div class="invitation-host-section">
+            <span class="host-caption">Cordially Invited By</span>
+            <p class="family-names">Mr. &amp; Mrs. Iftikhar Ali Awan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EVENTS / ITINERARY
+       ============================================================ -->
+  <section id="events">
+    <div class="container">
+      <h2 class="section-title reveal">The Celebrations</h2>
+      <p class="section-subtitle reveal">Join us for two joyous celebrations</p>
+      <div class="gold-divider reveal"></div>
+
+      <div class="events-timeline">
+
+        <!-- Event 1 — Mehndi -->
+        <article class="event-card reveal">
+          <div class="event-card-image">
+            <img src="images/mehndi-event.jpg" alt="Mehndi ceremony decoration" />
+          </div>
+          <div class="event-card-info">
+            <h3 class="event-card-name">Mehndi✨</h3>
+            <div class="event-card-meta">
+              <span>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
+                </svg>
+                Thursday, November 5, 2026
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.1.8-1.3-4.5-2.7V7z" />
+                </svg>
+                5:00 PM onwards
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z" />
+                </svg>
+                Al-Hassan Manzil, Marghzar Colony, Lahore
+              </span>
+            </div>
+            <p class="event-card-desc">
+              An evening of vibrant colours, traditional melodies, and mehndi artistry.
+              Join us for a night of joy, celebration, and dancing under the festive lights.
+            </p>
+          </div>
+        </article>
+
+        <!-- Event 2 — Baraat -->
+        <article class="event-card reveal">
+          <div class="event-card-image">
+            <img src="images/baraat-event.jpg" alt="Baraat procession decoration" />
+          </div>
+          <div class="event-card-info">
+            <h3 class="event-card-name">Baraat🐴</h3>
+            <div class="event-card-meta">
+              <span>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
+                </svg>
+                Friday, November 6, 2026
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.1.8-1.3-4.5-2.7V7z" />
+                </svg>
+                4:00 PM onwards
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z" />
+                </svg>
+                Nawab Palace, Raiwind Road, Opp. Lake City, Lahore
+              </span>
+            </div>
+            <p class="event-card-desc">
+              The grand procession — a celebration of love and new beginnings.
+              Witness the Nikah ceremony followed by an exquisite dinner reception.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       RSVP FORM
+       ============================================================ -->
+  <section id="rsvp">
+    <div class="container">
+      <h2 class="section-title reveal">RSVP</h2>
+      <p class="section-subtitle reveal">We would be honoured by your presence</p>
+      <div class="gold-divider reveal"></div>
+
+      <form id="rsvp-form" class="rsvp-form reveal" autocomplete="on">
+        <div class="form-group">
+          <label for="guest-name">Your Name</label>
+          <input type="text" id="guest-name" name="guest-name" placeholder="e.g. Hamza" required />
+        </div>
+
+
+        <div class="form-group">
+          <label for="guest-message">A Sweet Message</label>
+          <textarea id="guest-message" name="guest-message"
+            placeholder="Your blessings and wishes for the couple..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Send Your Wishes ✨</button>
+      </form>
+
+      <div id="rsvp-success" class="rsvp-success">
+        <h3>JazakAllah Khair! 🤍</h3>
+        <p>Your response has been received. We look forward to celebrating with you!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-divider-ornament">
+      <span class="ornament-line"></span>
+      <span class="ornament-symbol">✦ 🤍 ✦</span>
+      <span class="ornament-line"></span>
+    </div>
+    <p class="footer-names shimmer-text">Hadia &amp; Ali Rehan</p>
+    <p class="footer-tagline">"And among His signs is that He created for you mates from among yourselves, that you may
+      find tranquility in them." — Quran 30:21</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>
